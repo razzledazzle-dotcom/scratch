@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a National Holiday</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6f2;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ff99cc;
+            border-radius: 5px;
+            background-color: #ffe6f2;
+        }
+        button {
+            padding: 10px ;
+            border-radius: 5px;
+            background-color: #ff66b2;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3385;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create a National Holiday</h1>
+        <form id="holidayForm">
+            <input type="date" id="date" required>
+            <input type="text" id="title" placeholder="Holiday Title" required>
+            <textarea id="description" placeholder="Brief Explanation" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        document.getElementById('holidayForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const resultDiv = document.getElementById('result');
+            const isGoodHoliday = Math.random() > 0.5;
+            resultDiv.innerHTML = isGoodHoliday ? '👍 Good Holiday!' : '👎 Not a Good Holiday!';
+        });
+    </script>
+</body>
+</html>
